@@ -3,7 +3,8 @@ tcp_supertest
 
 TCP-SUPERTEST is a test helper for tcp server based on nodejs.
 
-h2. example
+example
+-------------
 
 ```
 
