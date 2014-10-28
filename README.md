@@ -24,5 +24,6 @@ describe('echo server', function() {
             done();
         }).end();
     });
+});
 
 ```
