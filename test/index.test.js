@@ -21,6 +21,7 @@ describe('echo server', function() {
 describe('something processing server', function() {
     var server = net.createServer();
 
+    
     server.on('connection', function(socket) {
         socket.on('data', function(data) {
             socket.write(data+'hoge');
@@ -51,6 +52,13 @@ describe('something processing server ver2', function() {
         request(server).write(msg).onData(function(data) {
             var res = data[0];
             res.should.be.equal(1);
+            done();
+        }).end();
+    });
+
+    it('should return same message 2', function(done) {
+        var msg = new Buffer([0x10]);
+        request(server).write(msg).onData(function(data) {
             done();
         }).end();
     });
